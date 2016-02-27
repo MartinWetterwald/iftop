@@ -59,6 +59,13 @@ config_enumeration_type sort_enumeration[] = {
 	{ NULL, -1 }
 };
 
+config_enumeration_type bar_interval_enumeration[] = {
+	{ "2s", OPTION_BAR_INTERVAL1 },
+	{ "10s", OPTION_BAR_INTERVAL2 },
+	{ "40s", OPTION_BAR_INTERVAL3 },
+	{ NULL, -1 }
+};
+
 config_enumeration_type linedisplay_enumeration[] = {
 	{ "two-line", OPTION_LINEDISPLAY_TWO_LINE },
 	{ "one-line-both", OPTION_LINEDISPLAY_ONE_LINE_BOTH },
@@ -154,7 +161,7 @@ void options_set_defaults() {
     options.show_totals = 0;
     options.max_bandwidth = 0; /* auto */
     options.log_scale = 0;
-    options.bar_interval = 1;
+    options.bar_interval = OPTION_BAR_INTERVAL2;
     options.timed_output = 0;
     options.no_curses = 0;
     options.num_lines = 10;
@@ -546,6 +553,7 @@ void options_make() {
     options_config_get_bool("hide-destination", &options.aggregate_dest);
     options_config_get_bool("use-bytes", &options.bandwidth_in_bytes);
     options_config_get_enum("sort", sort_enumeration, (int*)&options.sort);
+    options_config_get_enum("bar-interval", bar_interval_enumeration, (int*)&options.bar_interval);
     options_config_get_enum("line-display", linedisplay_enumeration, (int*)&options.linedisplay);
     options_config_get_bool("show-totals", &options.show_totals);
     options_config_get_bool("log-scale", &options.log_scale);

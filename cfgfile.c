@@ -32,6 +32,7 @@ char * config_directives[] = {
 	"hide-destination",
 	"use-bytes", 
 	"sort", 
+	"bar-interval",
 	"line-display", 
 	"show-totals", 
 	"log-scale", 
