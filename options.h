@@ -28,6 +28,12 @@ typedef enum {
 } option_sort_t;
 
 typedef enum {
+  OPTION_BAR_INTERVAL1,
+  OPTION_BAR_INTERVAL2,
+  OPTION_BAR_INTERVAL3,
+} option_bar_interval_t;
+
+typedef enum {
   OPTION_LINEDISPLAY_TWO_LINE,
   OPTION_LINEDISPLAY_ONE_LINE_BOTH,
   OPTION_LINEDISPLAY_ONE_LINE_RECV,
